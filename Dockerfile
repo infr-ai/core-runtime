@@ -16,15 +16,15 @@ RUN apt install -y build-essential git cmake ninja-build \
 WORKDIR /app
 
 # Pangolin
-RUN cd /app && git clone https://github.com/stevenlovegrove/Pangolin.git && cd Pangolin && git checkout v0.8 && \
+RUN cd /app && git clone --recursive https://github.com/stevenlovegrove/Pangolin.git && cd Pangolin && git checkout v0.8 && \
     mkdir -p build && cd build && cmake .. && make -j && make install && cd /app
 
 # NumCpp
-RUN cd /app && git clone https://github.com/dpilger26/NumCpp.git && cd NumCpp && git checkout a108470 && \
+RUN cd /app && git clone --recursive https://github.com/dpilger26/NumCpp.git && cd NumCpp && git checkout a108470 && \
     mkdir -p build && cd build && cmake .. && cmake --build . --target install && cd /app
 
 # g2o
-RUN cd /app && git clone https://github.com/RainerKuemmerle/g2o.git && cd g2o && git checkout e8df200 && \
+RUN cd /app && git clone --recursive https://github.com/RainerKuemmerle/g2o.git && cd g2o && git checkout e8df200 && \
     mkdir -p build && cd build && cmake .. && make -j && make install && cd /app
 
 # CCCoreLib
@@ -41,13 +41,13 @@ RUN wget https://file.insta360.com/static/07814586d4c390c59ffaab8b90d09659/Linux
     dpkg -i /tmp/MediaSDK/libMediaSDK-dev_2.0-0_ubuntu18.04_amd64/libMediaSDK-dev_2.0-0_amd64_ubuntu18.04.deb
 
 # ORB_SLAM3
-RUN cd /app && git clone https://github.com/infr-ai/ORB_SLAM3.git && cd ORB_SLAM3 && \
+RUN cd /app && git clone --recursive https://github.com/infr-ai/ORB_SLAM3.git && cd ORB_SLAM3 && \
     ./build.sh && cd /app
 
 # FBoW
-RUN cd /app && git clone https://github.com/infr-ai/FBoW.git && cd FBoW && \
+RUN cd /app && git clone --recursive https://github.com/infr-ai/FBoW.git && cd FBoW && \
     mkdir -p build && cd build && cmake .. && make -j && make install && cd /app
 
 # stella_vslam
-RUN cd /app && git clone https://github.com/infr-ai/stella_vslam.git && cd stella_vslam && \
+RUN cd /app && git clone --recursive https://github.com/infr-ai/stella_vslam.git && cd stella_vslam && \
     mkdir -p build && cd build && cmake .. && make -j && make install && cd /app
