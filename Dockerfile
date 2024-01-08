@@ -54,4 +54,4 @@ RUN cd /app && git clone --recursive https://github.com/infr-ai/stella_vslam.git
 
 # stella_vslam_examples
 RUN cd /app && git clone --recursive https://github.com/infr-ai/stella_vslam_examples.git && cd stella_vslam_examples && \
-    mkdir -p build && cd build && cmake .. && make && cd /app
+    mkdir -p build && cd build && cmake .. && make -j && cd /app
