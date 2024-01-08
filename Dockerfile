@@ -2,7 +2,7 @@ FROM nvidia/cuda:12.3.1-devel-ubuntu22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update
-RUN apt install -y build-essential software-properties-common wget curl unzip git cmake ninja-build \
+RUN apt install -y build-essential software-properties-common wget curl unzip git cmake ninja-build clang-format \
     libgl1-mesa-dev libwayland-dev libxkbcommon-dev wayland-protocols libegl1-mesa-dev \
     libglew-dev libeigen3-dev \
     libjpeg-dev libpng-dev \
