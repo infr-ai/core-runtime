@@ -33,3 +33,7 @@ RUN wget https://file.insta360.com/static/07814586d4c390c59ffaab8b90d09659/Linux
     unzip /tmp/SDK.zip -d /tmp/SDK && \
     unzip /tmp/SDK/LinuxSDK20231211/libMediaSDK-dev_2.0-0_ubuntu18.04_amd64.zip -d /tmp/MediaSDK && \
     dpkg -i /tmp/MediaSDK/libMediaSDK-dev_2.0-0_ubuntu18.04_amd64/libMediaSDK-dev_2.0-0_amd64_ubuntu18.04.deb
+
+# ORB_SLAM3
+RUN cd /app && git clone https://github.com/infr-ai/ORB_SLAM3.git && cd ORB_SLAM3 && \
+    ./build.sh && cd /app
