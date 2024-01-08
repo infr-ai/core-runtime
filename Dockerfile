@@ -10,7 +10,7 @@ RUN apt install -y build-essential git cmake ninja-build \
     libssl-dev libopencv-dev libboost-dev libboost-serialization-dev \
     software-properties-common wget unzip \
     libspdlog-dev libboost-date-time-dev libboost-log-dev libyaml-cpp-dev libsuitesparse-dev \
-    libcgal-dev qt6-base-dev qt6-base-dev-tools
+    libcgal-dev qtbase5-dev qtbase5-dev-tools qt6-base-dev qt6-base-dev-tools
 
 WORKDIR /app
 
