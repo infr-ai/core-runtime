@@ -25,6 +25,10 @@ RUN cd /app && git clone https://github.com/dpilger26/NumCpp.git && cd NumCpp &&
 RUN cd /app && git clone https://github.com/RainerKuemmerle/g2o.git && cd g2o && git checkout e8df200 && \
     mkdir -p build && cd build && cmake .. && make -j && make install && cd /app
 
+# CCCoreLib
+RUN cd /app && git clone https://github.com/CloudCompare/CCCoreLib.git && cd CCCoreLib && git checkout 02d7707 && \
+    mkdir -p build && cd build && cmake .. && make -j && make install && cd /app
+
 # Insta360 MediaSDK
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3B4FE6ACC0B21F32 && \
     add-apt-repository -y "deb http://security.ubuntu.com/ubuntu xenial-security main" && \
