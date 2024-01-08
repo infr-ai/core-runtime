@@ -52,7 +52,7 @@ RUN cd /app && git clone --recursive https://github.com/infr-ai/stella_vslam.git
     mkdir -p build && cd build && cmake .. && make -j && make install && cd /app
 
 # stella_pangolin_viewer
-RUN cd /app && git clone --recursive https://github.com/infr-ai/pangolin_viewer.git && cd pangolin_viewer && git checkout f356467 && \
+RUN cd /app && git clone --recursive https://github.com/infr-ai/pangolin_viewer.git && cd pangolin_viewer && \
     mkdir -p build && cd build && cmake .. && make -j && make install && cd /app
 
 # stella_vslam_examples
