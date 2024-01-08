@@ -10,7 +10,8 @@ RUN apt install -y build-essential git cmake ninja-build \
     libssl-dev libopencv-dev libboost-dev libboost-serialization-dev \
     software-properties-common wget unzip \
     libspdlog-dev libboost-date-time-dev libboost-log-dev libyaml-cpp-dev libsuitesparse-dev \
-    libcgal-dev qtbase5-dev qtbase5-dev-tools qt6-base-dev qt6-base-dev-tools
+    libcgal-dev qtbase5-dev qtbase5-dev-tools qt6-base-dev qt6-base-dev-tools \
+    libsqlite3-dev libgflags-dev libglew-dev
 
 WORKDIR /app
 
@@ -47,3 +48,6 @@ RUN cd /app && git clone https://github.com/infr-ai/ORB_SLAM3.git && cd ORB_SLAM
 RUN cd /app && git clone https://github.com/infr-ai/FBoW.git && cd FBoW && \
     mkdir -p build && cd build && cmake .. && make -j && make install && cd /app
 
+# stella_vslam
+RUN cd /app && git clone https://github.com/infr-ai/stella_vslam.git && cd stella_vslam && \
+    mkdir -p build && cd build && cmake .. && make -j && make install && cd /app
