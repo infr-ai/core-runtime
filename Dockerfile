@@ -14,9 +14,6 @@ RUN apt install -y build-essential software-properties-common wget curl unzip gi
 
 WORKDIR /app
 
-# orb_vocab
-RUN wget https://github.com/stella-cv/FBoW_orb_vocab/raw/main/orb_vocab.fbow -O /app/orb_vocab.fbow
-
 # Pangolin
 RUN cd /app && git clone --recursive https://github.com/stevenlovegrove/Pangolin.git && cd Pangolin && git checkout v0.8 && \
     mkdir -p build && cd build && cmake .. && make -j && make install && cd /app
@@ -61,3 +58,7 @@ RUN cd /app && git clone --recursive https://github.com/infr-ai/pangolin_viewer.
 # stella_vslam_examples
 RUN cd /app && git clone --recursive https://github.com/infr-ai/stella_vslam_examples.git && cd stella_vslam_examples && \
     mkdir -p build && cd build && cmake .. && make -j && cd /app
+
+# orb_vocab
+RUN wget https://github.com/stella-cv/FBoW_orb_vocab/raw/main/orb_vocab.fbow -O /app/orb_vocab.fbow
+RUN cp /app/ORB_SLAM3/Vocabulary/ORBvoc.txt /app/orb_vocab.txt
