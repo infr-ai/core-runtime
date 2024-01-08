@@ -14,12 +14,16 @@ RUN apt install -y build-essential git cmake ninja-build \
 WORKDIR /app
 
 # Pangolin
-RUN git clone https://github.com/stevenlovegrove/Pangolin.git && cd Pangolin && git checkout v0.8
-RUN cd /app/Pangolin && mkdir build && cd build && cmake .. && make -j && make install && cd /app
+RUN cd /app && git clone https://github.com/stevenlovegrove/Pangolin.git && cd Pangolin && git checkout v0.8 && \
+    mkdir -p build && cd build && cmake .. && make -j && make install && cd /app
 
 # NumCpp
 RUN cd /app && git clone https://github.com/dpilger26/NumCpp.git && cd NumCpp && git checkout a108470 && \
     mkdir -p build && cd build && cmake .. && cmake --build . --target install && cd /app
+
+# g2o
+RUN cd /app && git clone https://github.com/RainerKuemmerle/g2o.git && cd g2o && git checkout e8df200 && \
+    mkdir -p build && cd build && cmake .. && make -j && make install && cd /app
 
 # Insta360 MediaSDK
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3B4FE6ACC0B21F32 && \
