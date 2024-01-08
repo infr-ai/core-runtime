@@ -42,3 +42,8 @@ RUN wget https://file.insta360.com/static/07814586d4c390c59ffaab8b90d09659/Linux
 # ORB_SLAM3
 RUN cd /app && git clone https://github.com/infr-ai/ORB_SLAM3.git && cd ORB_SLAM3 && \
     ./build.sh && cd /app
+
+# FBoW
+RUN cd /app && git clone https://github.com/infr-ai/FBoW.git && cd FBoW && \
+    mkdir -p build && cd build && cmake .. && make -j && make install && cd /app
+
