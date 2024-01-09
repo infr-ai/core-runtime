@@ -15,7 +15,7 @@ RUN apt install -y build-essential software-properties-common wget curl unzip gi
 WORKDIR /app
 
 # Pangolin
-RUN cd /app && git clone --recursive https://github.com/stevenlovegrove/Pangolin.git && cd Pangolin && git checkout v0.8 && \
+RUN cd /app && git clone https://github.com/stevenlovegrove/Pangolin.git && cd Pangolin && git checkout v0.8 && \
     mkdir -p build && cd build && cmake .. && make -j && make install && cd /app
 
 # NumCpp
