@@ -10,7 +10,7 @@ RUN apt install -y build-essential software-properties-common wget curl unzip gi
     libssl-dev libopencv-dev libboost-dev libboost-serialization-dev \
     libspdlog-dev libboost-date-time-dev libboost-log-dev libyaml-cpp-dev libsuitesparse-dev \
     libcgal-dev qtbase5-dev qtbase5-dev-tools qt6-base-dev qt6-base-dev-tools \
-    libsqlite3-dev libgflags-dev libglew-dev
+    libsqlite3-dev libgflags-dev libglew-dev libpango1.0-dev
 
 WORKDIR /app
 
