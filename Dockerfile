@@ -20,12 +20,3 @@ RUN cd /app && git clone --recursive https://github.com/infr-ai/ORB_SLAM3.git &&
     ./build.sh && cd /app
 
 RUN cp /app/ORB_SLAM3/Vocabulary/ORBvoc.txt /app/orb_vocab.txt
-
-# Insta360 MediaSDK
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3B4FE6ACC0B21F32 && \
-    add-apt-repository -y "deb http://security.ubuntu.com/ubuntu xenial-security main" && \
-    apt update && apt install -y libjasper1 libjasper-dev
-RUN wget https://file.insta360.com/static/07814586d4c390c59ffaab8b90d09659/LinuxSDK20231211.zip -O /tmp/SDK.zip && \
-    unzip /tmp/SDK.zip -d /tmp/SDK && \
-    unzip /tmp/SDK/LinuxSDK20231211/libMediaSDK-dev_2.0-0_ubuntu18.04_amd64.zip -d /tmp/MediaSDK && \
-    dpkg -i /tmp/MediaSDK/libMediaSDK-dev_2.0-0_ubuntu18.04_amd64/libMediaSDK-dev_2.0-0_amd64_ubuntu18.04.deb
