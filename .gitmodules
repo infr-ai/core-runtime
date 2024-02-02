@@ -1,0 +1,3 @@
+[submodule "stella_vslam"]
+	path = stella_vslam
+	url = https://github.com/infr-ai/stella_vslam.git
